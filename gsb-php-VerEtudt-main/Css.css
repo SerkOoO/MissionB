@@ -1,0 +1,39 @@
+
+
+body {
+	background-color: white;
+	
+}
+
+table, th, td {
+	border: 1px solid white;
+	text-align: center;
+	width : 50%;
+}
+h1 {
+	color:white;
+
+}
+
+h2 {
+	color: white;
+}
+
+form {
+	background-color: cornflowerblue;
+	padding: 50px;
+	width: 800px;
+	color: WHITE;
+	text-shadow: 0 0 8px white;
+	text-align: left;
+}	
+
+		.white {
+			color: #FFFFFF
+		}
+			
+		.blue {
+			color: #4682B4;
+		}	
+	
+
