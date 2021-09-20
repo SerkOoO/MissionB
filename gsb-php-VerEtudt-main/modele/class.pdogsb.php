@@ -78,7 +78,15 @@ class PdoGsb{
 	public function getidVisiteur(){
 		$req = "select id from visiteur";
 		$rs = PdoGsb::$monPdo->query($req);
-		$ligne = $rs->fetch();
+		$ligne = $rs->fetchAll();
+		return $ligne;
+	}
+
+
+	public function getidFrais(){
+		$req = "select idFraisForfait from lignefraisforfait";
+		$rs = PdoGsb::$monPdo->query($req);
+		$ligne = $rs->fetchAll();
 		return $ligne;
 	}
 
@@ -93,6 +101,27 @@ class PdoGsb{
 
 
 	}
+
+	public function getFraisForfait(){
+		$req ="select id from fraisforfait";
+		$rs = PdoGsb::$monPdo->query($req);
+
+		$ligne = $rs->fetch();
+		
+		return $ligne;
+
+
+	}
+
+	public function afficherResult($idVisiteur,$idFraisForfait){
+		$req ="SELECT mois,montant,quantite from lignefraisforfait INNER JOIN fraisforfait ON idFraisForfait = fraisforfait.id";
+		$rs = PdoGsb::$monPdo->query($req);
+
+		$ligne = $rs->fetchAll();
+		
+		return $ligne;
+	}
+
 }
 
 ?>
